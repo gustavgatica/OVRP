@@ -1,0 +1,13 @@
+reset;
+
+option omit_zero_cols 1;
+option omit_zero_rows 1;
+
+model OVRP2.mod;
+data A-n45-k7.vrp.dat;
+option solver cplex;
+option cplex_options "time=3600 mipdisplay=2";
+solve;
+
+display CostoTotal;
+display solve_result_num;
